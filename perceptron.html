@@ -134,7 +134,7 @@ grid( nx = length( data$x1 ) + 1, ny = length( data$x1 ), col = 'black' )</code>
                     <p>The parameters that define the hyperplane is given by the values of the weights. However, there is an infinite combination of it, each one define a different position of the hyperplane, there is certain positions that provoke misclassification. This error occurs when an input of a known class is classified by the algorithm as belonging to an different class. So, we need to choose the best position to avoid misclassification. Coming back to code, let’s initiate the values of weights randomly within a short range of values, like this:</p>
                     <pre class="r"><code>weights = rnorm( mean = 0, sd = 0.1, n = ncol( data ) )
 
-                    print( weights )</code></pre>
+print( weights )</code></pre>
                     <pre><code>## [1]  0.07189541 -0.08588955 -0.12175474</code></pre>
                     <p>I took numbers randomly from normal distribuition with mean equal zero and stardard deviation equal 0.1. Wait a minute, so far we have seen two weights, one for each input, however the code above shows three weights. The third weights is for the bias inputs. Bias is a fixed input, generally either -1 or 1 that is responsible to activate a neuron even if the current inputs are both zeros. The last definition missing is the activation function. It will be the Heaviside step function as shown below:</p>
                     <div class="figure">
@@ -159,7 +159,7 @@ eta =  0.1
 
 weights = weights - eta * ( error ) * c( data[ 1, 1:2 ], 1 )
 
-                    print( weights )</code></pre>
+print( weights )</code></pre>
                     <pre><code>##          x1          x2
                     ##  0.07189541 -0.08588955 -0.12175474</code></pre>
 
@@ -270,7 +270,7 @@ weights = weights - eta * ( error ) * c( data[ 1, 1:2 ], 1 )
                 </div>
             </div>
         </div>
-    </footer> 
+    </footer>
 
     <!-- jQuery -->
     <script src="vendor/jquery/jquery.min.js"></script>
